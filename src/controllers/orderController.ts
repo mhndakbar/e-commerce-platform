@@ -6,7 +6,7 @@ import { ProductModel } from "../models/Product";
 // CREATE ORDER
 export const createOrder = async (req: Request, res: Response) => {
   try {
-    const cart = await CartModel.findById(req.params.cartId);
+    const cart = await CartModel.findById(req.body.cartId);
 
     if (!cart) {
       throw new Error("Cart is not found");
@@ -33,7 +33,7 @@ export const createOrder = async (req: Request, res: Response) => {
     const savedOrder = await newOrder.save();
     res.status(200).json(savedOrder);
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json(error.message);
   }
 };
 

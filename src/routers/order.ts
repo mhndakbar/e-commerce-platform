@@ -12,7 +12,7 @@ import {
 } from "../controllers/orderController";
 
 export default (router: Router) => {
-  router.post("/orders/:cartId", verifyToken, createOrder);
+  router.post("/orders", verifyToken, createOrder);
   router.put("/orders/:id", verifyTokenAndAdmin, updateOrder);
   router.delete("/orders/:id", verifyTokenAndAdmin, deleteOrder);
   router.get(
