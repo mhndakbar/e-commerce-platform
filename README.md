@@ -44,7 +44,7 @@ Optional:
 
 ## Running the app
 
-- Without Docker
+- With Docker
   run:
 
   ```
