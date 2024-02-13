@@ -1,6 +1,6 @@
 # E-commerce Platform
 
-An E-commerce app where users can register, create orders, and make a purchase
+An e-commerce application enabling users to register, create orders, and seamlessly make purchases.
 
 ## Table of Contents
 
@@ -44,7 +44,7 @@ Optional:
 
 ## Running the app
 
-- Without docker
+- Without Docker
   run:
 
   ```
@@ -53,7 +53,7 @@ Optional:
 
   now you can start using the application on `http://localhost:3000`
 
-- With Docker
+- Without Docker
   run:
   ```
   docker-compose up --build
@@ -68,7 +68,7 @@ Optional:
 
 1.  POST /api/auth/register
 
-    - Description: Registers a new user
+    - Description: Register a new user
     - Request Parameter: username*, password*, email\*
     - Response Parameter: User object
 
@@ -103,7 +103,7 @@ Optional:
 
     - Description: Login an existing user
     - Request Parameter: username*, password*
-    - Response Parameter: User oject, JWT token
+    - Response Parameter: User oject, token
 
     ##### Request Body params:
 
@@ -131,9 +131,9 @@ Optional:
 
 - Products
 
-  ### NOTE: for CRUD operations please include the token in the request header and make the user has `isAdmin` as true, in my case I've updated the user from mongoDB dashboard
+  ##### NOTE: for CRUD operations please include the token in the request header and make the user has `isAdmin` attribute as true, in my case I've updated the user from mongoDB dashboard
 
-  ### token example
+  ##### token example:
 
   ```
     Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Y2IxZjA4Yjc5NDQwOGM1ZGY5NTc4OCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MDc4MTE0MDIsImV4cCI6MTcwODA3MDYwMn0.ggJbFZjBJMNUZyKkFlBaArSb19LnbFdg6ogLh6anspU
@@ -143,7 +143,7 @@ Optional:
 
     - Description: Create a new product
     - Request Parameter: title*, description*, quantity*, price*
-    - Request Header: token\*
+    - Request Header: token\* + user is admin
     - Response Parameter: Product object
 
     ##### Request Body params:
@@ -176,7 +176,7 @@ Optional:
 
     - Description: Update product
     - Request Parameter: id\* (product id)
-    - Request Header: token\*
+    - Request Header: token\* + user is admin
     - Response Parameter: Product object
 
     ##### Request Body params:
@@ -209,7 +209,7 @@ Optional:
 
     - Description: Delete product
     - Request Parameter: id\* (product id)
-    - Request Header: token\*
+    - Request Header: token\* + user is admin
     - Response Parameter: Success Message
 
 4.  GET /api/products/find/:id
@@ -329,14 +329,14 @@ Optional:
 
     - Description: Update order
     - Request Parameter: id\* (order id)
-    - Request Header: token\*
+    - Request Header: token\* + user is admin
     - Response Parameter: Order object
 
 3.  DELETE /api/orders/:id
 
     - Description: Delete order
     - Request Parameter: id\* (order id)
-    - Request Header: token\*
+    - Request Header: token\* + user is admin
     - Response Parameter: order object
 
 4.  GET /api/orders/find/:userId
