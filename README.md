@@ -364,3 +364,5 @@ Optional:
 ## Special Thanks
 
 I would like to express my sincere gratitude for giving me the opportunity to work on this project.
+
+Front-end and unit tests are coming soon...
