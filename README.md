@@ -44,7 +44,7 @@ Optional:
 
 ## Running the app
 
-- With Docker
+- Without Docker
   run:
 
   ```
@@ -53,7 +53,7 @@ Optional:
 
   now you can start using the application on `http://localhost:3000`
 
-- Without Docker
+- With Docker
   run:
   ```
   docker-compose up --build
