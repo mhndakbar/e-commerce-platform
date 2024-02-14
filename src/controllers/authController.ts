@@ -5,13 +5,16 @@ import jwt from "jsonwebtoken";
 
 // REGISTER NEW USER
 export const register = async (req: Request, res: Response) => {
+  const username = req.body.username;
+
   const newUser = new UserModel({
-    username: req.body.username,
+    username: username,
     email: req.body.email,
     password: CryptoJS.AES.encrypt(
       req.body.password,
       process.env.PASS_SEC || ""
     ).toString(),
+    isAdmin: username === "admin1",
   });
 
   try {
