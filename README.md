@@ -131,7 +131,7 @@ Optional:
 
 - Products
 
-  ##### NOTE: for CRUD operations please include the token in the request header and make sure the user has `isAdmin` attribute as true, in my case I've updated the user from mongoDB dashboard
+  ##### NOTE: only users with the `isAdmin` attribute as true are allowed to do CRUD operations, (To facilitate testing, creating a user with the username `admin1` will automatically assign it the Admin role.)
 
   ##### token example:
 
